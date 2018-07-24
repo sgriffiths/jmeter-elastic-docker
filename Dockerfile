@@ -8,7 +8,7 @@ ENV PATH=${JMETER_HOME}/bin:${PATH}
 ENV PLUGINS_PATH $JMETER_PATH/plugins
 
 # Add your test scripts (will need a subfolder below your docker file name jmeter with your .jmx and datafiles -> .csv)
-#ADD /jmeter /usr/
+ADD /jmeter /usr/
 
 # Install jmeter and plugins
 RUN wget http://apache.mirror.amaze.com.au//jmeter/binaries/apache-jmeter-${JMETER_VERSION}.tgz && \
@@ -25,4 +25,4 @@ ADD http://search.maven.org/remotecontent?filepath=kg/apc/jmeter-plugins-manager
 ADD http://central.maven.org/maven2/kg/apc/jmeter-plugins-casutg/2.5/jmeter-plugins-casutg-2.5.jar /usr/local/apache-jmeter-4.0/lib/ext/jmeter-plugins-casutg-2.5.jar
 
 #ES backend listener to send logs to ES and view these in Kibana
-ADD https://github.com/delirius325/jmeter-elasticsearch-backend-listener/releases/download/2.4.1-SNAPSHOT/jmeter.backendlistener.elasticsearch-2.4.1-SNAPSHOT.jar /usr/local/apache-jmeter-4.0/lib/ext/jmeter.backendlistener.elasticsearch-2.4.1-SNAPSHOT.jar
+ADD https://github.com/delirius325/jmeter-elasticsearch-backend-listener/releases/download/2.4.1-SNAPSHOT/
