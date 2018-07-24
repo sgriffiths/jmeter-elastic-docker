@@ -7,9 +7,8 @@ ENV JMETER_HOME=/usr/local/apache-jmeter-${JMETER_VERSION}
 ENV PATH=${JMETER_HOME}/bin:${PATH}
 ENV PLUGINS_PATH $JMETER_PATH/plugins
 
-# Add your test scripts
-#ADD pt /usr/
-#ADD uat /usr/
+# Add your test scripts (will need a subfolder below your docker file name jmeter with your .jmx and datafiles -> .csv)
+ADD /jmeter /usr/
 
 # Install jmeter and plugins
 RUN wget http://apache.mirror.amaze.com.au//jmeter/binaries/apache-jmeter-${JMETER_VERSION}.tgz && \
